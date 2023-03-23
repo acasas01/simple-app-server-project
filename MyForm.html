@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>About Me!</title>
+    <link rel="stylesheet" href="resources/css/navbar.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/form.css" type="text/css">
+    <script src="resources/js/googleForm.js"></script>
+</head>
+
+
+<body>
+    <header>
+    <h1>Navigation bar</h1>
+        <nav class="navbar">
+            <a href="AboutMe.html">About Me</a>
+            <a href="mySchedule.html">My Schedule</a>
+            <a href="MyForm.html">Form</a>
+        </nav>
+    </header>
+
+    <form id="eventForm" action="http://localhost:9001/MyForm.html" method="post">
+
+      <p>
+        <label for="event">Event Name:</label>
+        <input type="text" id="event" name="event" pattern="[A-Za-z0-9\s]*" required>
+      </p>
+
+      <p> 
+        <label for="day">Day of Week:</label>
+        <select id="day" name="day">
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+      </p>
+      
+      <p> 
+        <label for="start">Start Time:</label>
+        <input type="time" id="start" name="start" required>
+      </p>
+
+      <p> 
+        <label for="end">End Time:</label>
+        <input type="time" id="end" name="end" required>
+      </p>
+      
+      <p> 
+        <label for="location">Event Location:</label>
+        <input type="text" id="location" name="location" required>
+      </p>
+      
+      <p>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="111-222-3333" required>
+      </p>
+
+      <p> 
+        <label for="extra">Extra Info:</label>
+        <input type="text" id="extra" name="extra" required>
+      </p>
+
+      <p> 
+        <label for="url">Enter URL for the event:</label>
+        <input type="url" id="url" name="url" required>
+      </p>
+
+      <p> 
+        <input type="submit" value="Submit">
+      </p>  
+
+    </form>
+      
+  <div id="map"></div>
+
+  <div id="infowindow-content">
+    <span id="place-name" class="title"></span>
+    <span id="place-id"></span>
+    <span id="place-address"></span>
+  </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKV_ZWS2vXsELohIbIxE_Liqf0msc0W2U&libraries=places&v=weekly&callback=initializeMap" defer></script>
+</body>
+
+</html>
